@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.gradleforandroid.buildvariants"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "API_URL", "\"http://test.example.com/api\""
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_URL", "\"http://example.com/api\""
+        }
+    }
+
+    flavorDimensions "color", "price"
+
+    productFlavors {
+        red {
+            flavorDimension "color"
+            applicationId "com.gradleforandroid.red"
+            versionCode 3
+            resValue "color", "flavor_color", "#ff0000"
+        }
+
+        blue {
+            flavorDimension "color"
+            applicationId "com.gradleforandroid.blue"
+            minSdkVersion 14
+            versionCode 4
+            resValue "color", "flavor_color", "#0000ff"
+        }
+
+        free {
+            flavorDimension "price"
+        }
+
+        paid {
+            flavorDimension "price"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.0'
+}
+
+android.variantFilter { variant ->
+    if(variant.buildType.name.equals('release')) {
+        variant.getFlavors().each() { flavor ->
+            if (flavor.name.equals('blue')) {
+                variant.setIgnore(true)
+            }
+        }
+    }
+}

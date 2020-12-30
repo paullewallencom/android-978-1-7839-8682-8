@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MultiModule.iml" filepath="$PROJECT_DIR$/MultiModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidlibrary/androidlibrary.iml" filepath="$PROJECT_DIR$/androidlibrary/androidlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javalibrary/javalibrary.iml" filepath="$PROJECT_DIR$/javalibrary/javalibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mobile/mobile.iml" filepath="$PROJECT_DIR$/mobile/mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wear/wear.iml" filepath="$PROJECT_DIR$/wear/wear.iml" />
+    </modules>
+  </component>
+</project>

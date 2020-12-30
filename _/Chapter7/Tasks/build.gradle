@@ -1,0 +1,48 @@
+apply plugin: 'base'
+
+task empty
+
+task hello {
+	println 'Configuration'
+	
+	doLast {
+		println 'Goodbye'
+	}
+	
+	doFirst {
+		println 'Hello'
+	}
+}
+
+task mindTheOrder {
+	doFirst {
+		println 'Not really first.'
+	}
+	
+	doFirst {
+		println 'First!'
+	}
+	
+	doLast {
+		println 'Not really last.'
+	}
+	
+	doLast {
+		println 'Last!'
+	}
+}
+
+task task1 << {
+    println 'task1'
+}
+
+task task2 << {
+    println 'task2'
+}
+
+task task3 << {
+    println 'task3'
+}
+
+task2.dependsOn task1
+task3.mustRunAfter task2

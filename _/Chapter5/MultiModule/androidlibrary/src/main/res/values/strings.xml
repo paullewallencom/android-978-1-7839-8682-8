@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidLibrary</string>
+    <string name="library_resource">String from AndroidLibrary</string>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Robolectric</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_robolectric">Hello Robolectric!</string>
+
+    <string name="push">Push me</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
